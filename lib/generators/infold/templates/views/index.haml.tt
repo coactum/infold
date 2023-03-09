@@ -4,7 +4,7 @@
     %ol.breadcrumb
       %li.breadcrumb-item.active <%= @writer.resource.app_title %>
     .ms-auto
-      = link_to t('infold.operation.new'), <%= @writer.new_path %>, class: 'btn btn-warning', data: { turbo_frame: "modal_main" }
+      = link_to t('infold.operation.new'), <%= @writer.new_path %>, class: 'btn btn-primary', data: { turbo_frame: "modal_main" }
 #index_page.d-md-flex{ data: { controller: 'index-page', index_page_target: 'wrapper' } }
   #conditions.bg-white.container-fluid.border-end.pe-3.py-3
     = form_with model: @search, url: <%= @writer.index_path %>, method: :get, scope: 'search',
