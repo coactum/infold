@@ -2,8 +2,8 @@
 %nav.navbar.navbar-light
   .container-fluid
     %ol.breadcrumb
-      %li.breadcrumb-item.active <%= @writer.resource.app_title %>
-        Admin::<%= @writer.resource_name(:model) %>.model_name.human
+      %li.breadcrumb-item.active
+        = Admin::<%= @writer.resource_name(:model) %>.model_name.human
     .ms-auto
       = link_to t('infold.operation.new'), <%= @writer.new_path %>, class: 'btn btn-primary', data: { turbo_frame: "modal_main" }
 #index_page.d-md-flex{ data: { controller: 'index-page', index_page_target: 'wrapper' } }
