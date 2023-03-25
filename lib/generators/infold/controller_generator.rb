@@ -40,7 +40,7 @@ module Infold
       return if name.pluralize.underscore == 'admin_users'
       file = Rails.root.join('app/views/admin/common/_header_menu.html.haml')
       return unless File.exist?(file)
-      menu = "\n  %li.nav-item\n    = link_to '#{@writer.resource.app_title}', #{@writer.index_path}, class: 'nav-link'"
+      menu = "\n  %li.nav-item\n    = link_to Admin::#{@writer.resource_name(:model)}.model_name.human, #{@writer.index_path}, class: 'nav-link'"
       in_file = File.readlines(file).grep(/, #{@writer.index_path},/)
       if in_file.blank?
         append_to_file file do
